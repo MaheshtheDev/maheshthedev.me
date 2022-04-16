@@ -11,11 +11,12 @@ export default function Home() {
         <title>Sv's Portfolio</title>
       </Head>
       <header className="flex justify-between">
-        <Image src="/logo.svg" height={100} width={100} />
+        <Image src="/logo.svg" height={100} width={100} alt="logo" />
         <nav className="flex items-center">
           <a
             href="https://blog.maheshthedev.me/"
             target={"_blank"}
+            rel="noreferrer"
             className="font-medium mx-5 flex"
           >
             Blog
@@ -38,7 +39,7 @@ export default function Home() {
             </div>
           </section>
         </section>
-        <Image src="/profile_pic.svg" height={250} width={250} />
+        <Image src="/profile_pic.svg" height={250} width={250} alt="profile pic" />
       </main>
       <div className="font-medium text-xl mt-5">About me</div>
       <div className="font-medium text-xl mt-5">Whats New?</div>
