@@ -6,12 +6,12 @@ import ProjectCard from "../components/projectcard";
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center max-w-2xl mx-auto font-Montserrat">
+    <div className="flex flex-col justify-center p-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
       <Head>
         <title>Sv&apos;s Portfolio</title>
       </Head>
       <header className="flex justify-between">
-        <Image src="/logo.svg" height={100} width={100} alt="logo" />
+        <Image src="/logo.svg" height={75} width={100} alt="logo" />
         <nav className="flex items-center">
           <a
             href="https://blog.maheshthedev.me/"
@@ -27,23 +27,30 @@ export default function Home() {
           </a>
         </nav>
       </header>
-
+      <p className="justify-center flex font-semibold text-red-700">
+        ⚠️ Development is still in Progress ⚠️
+      </p>
       <main className="flex justify-between">
         <section className="flex items-center">
           <section>
-            <p className="text-3xl font-semibold">MaheshtheDev</p>
-            <p className="text-2xl font-semibold">A Dev on Mission</p>
+            <p className="text-2xl md:text-3xl font-semibold">MaheshtheDev</p>
+            <p className="text-xl md:text-2xl font-semibold">
+              A Dev on Mission
+            </p>
             <div className="w-fit">
-              <p className="text-md underline">Automating Non-Creative Jobs</p>
+              <p className="text-sm md:text-md underline">
+                Automating Non-Creative Jobs
+              </p>
               <p className="text-sm float-right">w/ webtools</p>
             </div>
           </section>
         </section>
         <Image
           src="/profile_pic.svg"
-          height={250}
-          width={250}
+          height={200}
+          width={125}
           alt="profile pic"
+          className="float-right"
         />
       </main>
       <div className="font-medium text-xl mt-5">About me</div>
