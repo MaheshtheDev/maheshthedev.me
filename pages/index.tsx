@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center max-w-2xl mx-auto font-Montserrat">
       <Head>
-        <title>Sv's Portfolio</title>
+        <title>Sv&apos;s Portfolio</title>
       </Head>
       <header className="flex justify-between">
         <Image src="/logo.svg" height={100} width={100} alt="logo" />
@@ -39,7 +39,12 @@ export default function Home() {
             </div>
           </section>
         </section>
-        <Image src="/profile_pic.svg" height={250} width={250} alt="profile pic" />
+        <Image
+          src="/profile_pic.svg"
+          height={250}
+          width={250}
+          alt="profile pic"
+        />
       </main>
       <div className="font-medium text-xl mt-5">About me</div>
       <div className="font-medium text-xl mt-5">Whats New?</div>
