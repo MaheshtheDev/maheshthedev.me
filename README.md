@@ -1,6 +1,12 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?s=https%3A%2F%2Fgithub.com%2FMaheshtheDev%2Fmaheshthedev.me)
 
-# MaheshtheDev.me
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MaheshtheDev/maheshthedev.me/main/public/logo.svg" />
+</p>
+
+<h1 align="center">
+MaheshtheDev.me
+</h1>
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Deployment**: [Vercel](https://vercel.com)
