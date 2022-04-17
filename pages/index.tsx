@@ -1,10 +1,22 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
+
+import useSWR from "swr";
+
 import Postcard from "../components/postcard";
 import ProjectCard from "../components/projectcard";
+import fetcher from "../lib/fetcher";
+import { Article } from "../components/types";
+import projects from "../data/projects.json";
+import AboutMe from "../components/about-me";
 
 export default function Home() {
+  var { data } = useSWR<any>("/api/articles", fetcher);
+
+  if (data) data.response = data.response.slice(0, 3);
+
+  if (!data) return null;
+
   return (
     <div className="flex flex-col justify-center p-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
       <Head>
@@ -53,20 +65,22 @@ export default function Home() {
           className="float-right"
         />
       </main>
-      <div className="font-medium text-xl mt-5">About me</div>
-      <div className="font-medium text-xl mt-5">Whats New?</div>
+      <AboutMe />
+      {/*<div className="font-medium text-xl mt-5">Whats New?</div>*/}
       <section className="mt-5">
         <p className="text-xl font-medium">Recent Blog Posts</p>
         <section className="flex mt-2">
-          <Postcard />
-          <Postcard />
+          {data.response.map((article: Article, index: number) => (
+            <Postcard article={article} key={index} />
+          ))}
         </section>
       </section>
       <section className="mt-5">
         <p className="text-xl font-medium">Projects</p>
         <section className="flex mt-2 flex-col">
-          <ProjectCard />
-          <ProjectCard />
+          {projects.map((project: any, index: number) => (
+          <ProjectCard project={project} key={index}/>
+          ))}
         </section>
       </section>
     </div>
