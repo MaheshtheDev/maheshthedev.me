@@ -1,5 +1,3 @@
-const hashnode_token = process.env.HASHNODE_TOKEN;
-
 export const getRecentArticles = async (query: any, variables = {}) => {
   const data = await fetch("https://api.hashnode.com/", {
     method: "POST",

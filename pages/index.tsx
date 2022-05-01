@@ -8,12 +8,14 @@ import ProjectCard from "../components/projectcard";
 import fetcher from "../lib/fetcher";
 import { Article } from "../components/types";
 import projects from "../data/projects.json";
+import recent from "../data/recent.json";
 import AboutMe from "../components/about-me";
 
 export default function Home() {
   var { data } = useSWR<any>("/api/articles", fetcher);
+  var { data: problemSolved } = useSWR<any>("/api/problem-solved", fetcher);
 
-  if (data) data.response = data.response.slice(0, 3);
+  if (data) data.response = data.response.slice(0, 2);
 
   if (!data) return null;
 
@@ -66,7 +68,23 @@ export default function Home() {
         />
       </main>
       <AboutMe />
-      {/*<div className="font-medium text-xl mt-5">Whats New?</div>*/}
+      <div className="font-medium text-xl mt-5">Whats New?</div>
+      <div className="flex items-center pt-2">
+        <p className="text-xs p-1 rounded-[5px]">APR 2022</p>
+        <div className="pl-2 font-normal cursor-pointer flex items-center">
+          {problemSolved != undefined ? problemSolved.title : "Loading"}
+          <p className="text-xs pl-1">(Last Solved Problem!)</p>
+        </div>
+      </div>
+      {recent.map((activity) => (
+        <div className="flex items-center">
+          <p className="text-xs p-1 rounded-[5px]">APR 2022</p>
+          <div className="pl-2 font-normal cursor-pointer flex items-center">
+            {activity.title}
+            <p className="text-xs pl-1"></p>
+          </div>
+        </div>
+      ))}
       <section className="mt-5">
         <p className="text-xl font-medium">Recent Blog Posts</p>
         <section className="flex mt-2">
@@ -79,7 +97,7 @@ export default function Home() {
         <p className="text-xl font-medium">Projects</p>
         <section className="flex mt-2 flex-col">
           {projects.map((project: any, index: number) => (
-          <ProjectCard project={project} key={index}/>
+            <ProjectCard project={project} key={index} />
           ))}
         </section>
       </section>
