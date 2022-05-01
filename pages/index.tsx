@@ -20,7 +20,7 @@ export default function Home() {
   if (!data) return null;
 
   return (
-    <div className="flex flex-col justify-center p-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
+    <div className="flex flex-col min-h-screen relative justify-center p-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
       <Head>
         <title>Sv&apos;s Portfolio</title>
       </Head>
@@ -36,7 +36,7 @@ export default function Home() {
             Blog
             <img src="/45Arrow.svg" className="pl-1" alt="next_link"></img>
           </a>
-          <a href="#" className="font-medium">
+          <a href="#projects" className="font-medium">
             Projects
           </a>
         </nav>
@@ -93,14 +93,23 @@ export default function Home() {
           ))}
         </section>
       </section>
-      <section className="mt-5">
-        <p className="text-xl font-medium">Projects</p>
+      <section className="mt-5 pb-8">
+        <p className="text-xl font-medium" id="projects">
+          Projects
+        </p>
         <section className="flex mt-2 flex-col">
           {projects.map((project: any, index: number) => (
             <ProjectCard project={project} key={index} />
           ))}
         </section>
       </section>
+      <footer className="py-2 w-full absolute bottom-0">
+        <hr className="h-[2px] border-1 border-solid bg-black" />
+        <div className="flex justify-between text-xs py-1">
+          <p>© 2022, MaheshtheDev.</p>
+          <p className="text-[#9E9494]">Last Updated: 1 May 2022</p>
+        </div>
+      </footer>
     </div>
   );
 }
