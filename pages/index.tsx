@@ -34,7 +34,7 @@ export default function Home() {
             className="font-medium mx-5 flex"
           >
             Blog
-            <img src="/45Arrow.svg" className="pl-1"></img>
+            <img src="/45Arrow.svg" className="pl-1" alt="next_link"></img>
           </a>
           <a href="#" className="font-medium">
             Projects
@@ -76,8 +76,8 @@ export default function Home() {
           <p className="text-xs pl-1">(Last Solved Problem!)</p>
         </div>
       </div>
-      {recent.map((activity) => (
-        <div className="flex items-center">
+      {recent.map((activity, index: number) => (
+        <div className="flex items-center" key={index}>
           <p className="text-xs p-1 rounded-[5px]">APR 2022</p>
           <div className="pl-2 font-normal cursor-pointer flex items-center">
             {activity.title}

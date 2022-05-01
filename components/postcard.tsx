@@ -9,7 +9,7 @@ export default function Postcard(props : {article: Article}) {
         className="text-[#A1B6EE] flex absolute text-sm font-medium inset-x-0 bottom-0 p-3 hover:transiti"
       >
         <span className="hover:pr-1">Read Article</span>
-        <img src="/arrow_st.svg" className="pl-1 pt-[2px]" />
+        <img src="/arrow_st.svg" className="pl-1 pt-[2px]" alt="Arrow_icon" />
       </a>
     </div>
   );
