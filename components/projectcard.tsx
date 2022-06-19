@@ -5,7 +5,7 @@ export default function ProjectCard(props : {project: any}) {
       className="rounded-xl flex flex-col md:flex-row md:items-center justify-between md:px-5 px-3 py-2 bg-[#1B1818] h-32 w-full mb-3 text-white "
     >
       <div className="md:w-2/3">
-        <p className="font-medium text-md">{props.project.title}</p>
+        <p className="font-semibold text-md">{props.project.title}</p>
         <p className="text-xs md:text-sm brightness-50 flex-wrap">
           {props.project.description}
         </p>

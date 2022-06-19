@@ -93,7 +93,7 @@ export default function Home() {
           ))}
         </section>
       </section>
-      <section className="mt-5 pb-8">
+      <section className="mt-5 pb-4">
         <p className="text-xl font-medium" id="projects">
           Projects
         </p>
@@ -103,7 +103,7 @@ export default function Home() {
           ))}
         </section>
       </section>
-      <footer className="py-2 w-full absolute bottom-0">
+      <footer className="py-2">
         <hr className="h-[2px] border-1 border-solid bg-black" />
         <div className="flex justify-between text-xs py-1">
           <p>© 2022, MaheshtheDev.</p>
