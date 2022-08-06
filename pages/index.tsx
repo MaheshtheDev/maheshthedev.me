@@ -52,7 +52,7 @@ export default function Home() {
           </a>
         </nav>
       </header>
-      <p className="justify-center flex font-semibold text-red-700">
+      <p className="justify-center flex font-semibold text-red-700 animate-pulse">
         ⚠️ Development is still in Progress ⚠️
       </p>
       <main className="flex justify-between">
@@ -63,7 +63,7 @@ export default function Home() {
               A Dev on Mission
             </p>
             <div className="w-fit">
-              <p className="text-sm md:text-md underline">
+              <p className="text-sm md:text-md underline text-primary">
                 Automating Non-Creative Jobs
               </p>
               <p className="text-sm float-right">w/ webtools</p>
@@ -71,7 +71,7 @@ export default function Home() {
           </section>
         </section>
         <Image
-          src="/profile_pic.svg"
+          src="/new-me.svg"
           height={200}
           width={125}
           alt="profile pic"
@@ -79,7 +79,7 @@ export default function Home() {
         />
       </main>
       <AboutMe />
-      <div className="font-medium text-xl mt-5">Whats New?</div>
+      <div className="font-medium text-lg mt-5 text-primary">Whats New?</div>
       <div className="flex items-center pt-2">
         <p className="text-xs p-1 rounded-[5px]">APR 2022</p>
         <div className="pl-2 font-normal cursor-pointer flex items-center">
@@ -97,7 +97,7 @@ export default function Home() {
         </div>
       ))}
       <section className="mt-5">
-        <p className="text-xl font-medium">Recent Blog Posts</p>
+        <p className="text-lg font-medium text-primary">Recent Blog Posts</p>
         <section className="flex mt-2">
           {data.response.map((article: Article, index: number) => (
             <Postcard article={article} key={index} />
@@ -105,7 +105,7 @@ export default function Home() {
         </section>
       </section>
       <section className="mt-5 pb-4">
-        <p className="text-xl font-medium" id="projects">
+        <p className="text-lg font-medium text-primary" id="projects">
           Projects
         </p>
         <section className="flex mt-2 flex-col">

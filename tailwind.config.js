@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
       },
+      colors: {
+        primary: "#BDFF00",
+      },
     },
   },
   plugins: [],
