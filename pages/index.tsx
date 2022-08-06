@@ -14,6 +14,7 @@ import AboutMe from "../components/about-me";
 export default function Home() {
   var { data } = useSWR<any>("/api/articles", fetcher);
   var { data: problemSolved } = useSWR<any>("/api/problem-solved", fetcher);
+  var { data: siteUpdatedOn } = useSWR<any>("/api/site-updated-on", fetcher);
 
   if (data) data.response = data.response.slice(0, 2);
 
@@ -42,12 +43,12 @@ export default function Home() {
             href="https://blog.maheshthedev.me/"
             target={"_blank"}
             rel="noreferrer"
-            className="font-medium mx-5 flex"
+            className="font-medium mx-5 flex hover:text-primary"
           >
             Blog
             <img src="/45Arrow.svg" className="pl-1" alt="next_link"></img>
           </a>
-          <a href="#projects" className="font-medium">
+          <a href="#projects" className="font-medium hover:text-primary">
             Projects
           </a>
         </nav>
@@ -120,7 +121,7 @@ export default function Home() {
         <hr className="h-[2px] border-1 border-solid bg-black" />
         <div className="flex justify-between text-xs py-1">
           <p>© 2022, MaheshtheDev.</p>
-          <p className="text-[#9E9494]">Last Updated: 1 May 2022</p>
+          <p className="text-[#9E9494]">Last Updated: { siteUpdatedOn ? siteUpdatedOn.time : "Never"}</p>
         </div>
       </footer>
     </div>
