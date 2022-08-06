@@ -97,8 +97,10 @@ export default function Home() {
         </div>
       ))}
       <section className="mt-5">
-        <p className="text-lg font-medium text-primary">Recent Blog Posts</p>
-        <section className="flex mt-2">
+        <p className="text-lg font-medium text-primary mb-2">
+          Recent Blog Posts
+        </p>
+        <section className="flex overflow-x-auto">
           {data.response.map((article: Article, index: number) => (
             <Postcard article={article} key={index} />
           ))}
