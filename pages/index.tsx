@@ -71,7 +71,7 @@ export default function Home() {
             </div>
           </section>
         </section>
-        <Image
+        <img
           src="/new-me.svg"
           height={200}
           width={125}
