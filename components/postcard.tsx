@@ -2,7 +2,7 @@ import { Article } from "./types";
 
 export default function Postcard(props : {article: Article}) {
   return (
-    <div className="relative rounded-xl px-3 py-2 bg-[#1B1818] h-32 w-44 mr-3">
+    <div className="relative rounded-xl py-2 px-3 bg-[#1B1818] mr-3 w-44 h-36">
       <p className="text-white font-medium text-md">{props.article.title}</p>
       <a
         href={"https://blog.maheshthedev.me/" + props.article.slug}
