@@ -28,12 +28,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:image"
-          content="https://maheshthedev.me/images/OG-Image.png"
+          content="https://maheshthedev.me/OG-Image.png"
         />
-        <meta property="og:title" content="Prime Speciality Clinics" />
+        <meta property="og:title" content="MaheshtheDev's Portfolio" />
         <meta
           property="og:description"
-          content="Pulmonolgy and Ortho Treatment now at Prime Speciality Clinics"
+          content="Automating Non-Creative Jobs w/ webtools"
         />
       </Head>
       <header className="flex justify-between">
@@ -121,7 +121,9 @@ export default function Home() {
         <hr className="h-[2px] border-1 border-solid bg-black" />
         <div className="flex justify-between text-xs py-1">
           <p>© 2022, MaheshtheDev.</p>
-          <p className="text-[#9E9494]">Last Updated: { siteUpdatedOn ? siteUpdatedOn.time : "Never"}</p>
+          <p className="text-[#9E9494]">
+            Last Updated: {siteUpdatedOn ? siteUpdatedOn.time : "Never"}
+          </p>
         </div>
       </footer>
     </div>
