@@ -121,9 +121,7 @@ export default function Home() {
         <hr className="h-[2px] border-1 border-solid bg-black" />
         <div className="flex justify-between text-xs py-1">
           <p>© 2022, MaheshtheDev.</p>
-          <p className="text-[#9E9494]">
-            Last Updated: {siteUpdatedOn ? siteUpdatedOn.time : "Never"}
-          </p>
+          <p className="text-[#9E9494]">Last Updated: { siteUpdatedOn ? siteUpdatedOn.time : "Never"}</p>
         </div>
       </footer>
     </div>

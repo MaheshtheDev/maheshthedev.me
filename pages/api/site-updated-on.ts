@@ -6,8 +6,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const response = await getLastSiteUpdatedOn().then((res1) => {
-    return res1;
+  const response = await getLastSiteUpdatedOn().then((res) => {
+    return res;
   });
 
   if (!response) {
