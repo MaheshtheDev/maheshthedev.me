@@ -14,6 +14,7 @@ import AboutMe from "../components/about-me";
 export default function Home() {
   var { data } = useSWR<any>("/api/articles", fetcher);
   var { data: problemSolved } = useSWR<any>("/api/problem-solved", fetcher);
+  var { data: siteUpdatedOn } = useSWR<any>("/api/site-updated-on", fetcher);
 
   if (data) data.response = data.response.slice(0, 2);
 
@@ -27,12 +28,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:image"
-          content="https://maheshthedev.me/images/OG-Image.png"
+          content="https://maheshthedev.me/OG-Image.png"
         />
-        <meta property="og:title" content="Prime Speciality Clinics" />
+        <meta property="og:title" content="MaheshtheDev's Portfolio" />
         <meta
           property="og:description"
-          content="Pulmonolgy and Ortho Treatment now at Prime Speciality Clinics"
+          content="Automating Non-Creative Jobs w/ webtools"
         />
       </Head>
       <header className="flex justify-between">
@@ -42,17 +43,17 @@ export default function Home() {
             href="https://blog.maheshthedev.me/"
             target={"_blank"}
             rel="noreferrer"
-            className="font-medium mx-5 flex"
+            className="font-medium mx-5 flex hover:text-primary"
           >
             Blog
             <img src="/45Arrow.svg" className="pl-1" alt="next_link"></img>
           </a>
-          <a href="#projects" className="font-medium">
+          <a href="#projects" className="font-medium hover:text-primary">
             Projects
           </a>
         </nav>
       </header>
-      <p className="justify-center flex font-semibold text-red-700">
+      <p className="justify-center flex font-semibold text-red-700 animate-pulse">
         ⚠️ Development is still in Progress ⚠️
       </p>
       <main className="flex justify-between">
@@ -63,7 +64,7 @@ export default function Home() {
               A Dev on Mission
             </p>
             <div className="w-fit">
-              <p className="text-sm md:text-md underline">
+              <p className="text-sm md:text-md underline text-primary">
                 Automating Non-Creative Jobs
               </p>
               <p className="text-sm float-right">w/ webtools</p>
@@ -71,7 +72,7 @@ export default function Home() {
           </section>
         </section>
         <Image
-          src="/profile_pic.svg"
+          src="/new-me.svg"
           height={200}
           width={125}
           alt="profile pic"
@@ -79,7 +80,7 @@ export default function Home() {
         />
       </main>
       <AboutMe />
-      <div className="font-medium text-xl mt-5">Whats New?</div>
+      <div className="font-medium text-lg mt-5 text-primary">Whats New?</div>
       <div className="flex items-center pt-2">
         <p className="text-xs p-1 rounded-[5px]">APR 2022</p>
         <div className="pl-2 font-normal cursor-pointer flex items-center">
@@ -97,15 +98,17 @@ export default function Home() {
         </div>
       ))}
       <section className="mt-5">
-        <p className="text-xl font-medium">Recent Blog Posts</p>
-        <section className="flex mt-2">
+        <p className="text-lg font-medium text-primary mb-2">
+          Recent Blog Posts
+        </p>
+        <section className="flex overflow-x-auto">
           {data.response.map((article: Article, index: number) => (
             <Postcard article={article} key={index} />
           ))}
         </section>
       </section>
       <section className="mt-5 pb-4">
-        <p className="text-xl font-medium" id="projects">
+        <p className="text-lg font-medium text-primary" id="projects">
           Projects
         </p>
         <section className="flex mt-2 flex-col">
@@ -118,7 +121,7 @@ export default function Home() {
         <hr className="h-[2px] border-1 border-solid bg-black" />
         <div className="flex justify-between text-xs py-1">
           <p>© 2022, MaheshtheDev.</p>
-          <p className="text-[#9E9494]">Last Updated: 1 May 2022</p>
+          <p className="text-[#9E9494]">Last Updated: { siteUpdatedOn ? siteUpdatedOn.time : "Never"}</p>
         </div>
       </footer>
     </div>
