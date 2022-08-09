@@ -30,10 +30,7 @@ export default function Home() {
         <meta property="og:url" content="https://www.maheshthedev.me/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Sv Portfolio" />
-        <meta
-          property="og:image"
-          content="https://maheshthedev.me/images/OG-Image.png"
-        />
+        <meta property="og:image" content="https://www.maheshthedev.me/images/OG-Image.png"/>
         <meta property="og:title" content="MaheshtheDev's Portfolio" />
         <meta
           property="og:description"
