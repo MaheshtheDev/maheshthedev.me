@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta
           property="og:image"
-          content="http://www.maheshthedev.me/images/OG-Image.png"
+          content="https://www.maheshthedev.me/images/OG-Image.png"
         />
 
         {/*<!-- Twitter Meta Tags -->*/}
