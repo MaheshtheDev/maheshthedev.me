@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen relative justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
       <Head>
-        <title>Sv&apos;s Portfolio</title>
+        <title>Sv Portfolio</title>
         <meta name="description" content="Mahesh Reddy's Portfolio" />
         <link rel="icon" href="/favicon.ico" />
 
