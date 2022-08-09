@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
 
         {/*<!-- HTML Meta Tags -->*/}
-        <title>Sv's Portfolio</title>
+        <title>Sv Portfolio</title>
         <meta
           name="description"
           content="Automating Non-Creative Jobs w/ webtools"
