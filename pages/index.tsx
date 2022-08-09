@@ -26,9 +26,13 @@ export default function Home() {
         <title>Sv&apos;s Portfolio</title>
         <meta name="description" content="Mahesh Reddy's Portfolio" />
         <link rel="icon" href="/favicon.ico" />
+
+        <meta property="og:url" content="https://www.maheshthedev.me/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Sv Portfolio" />
         <meta
           property="og:image"
-          content="https://maheshthedev.me/OG-Image.png"
+          content="https://maheshthedev.me/images/OG-Image.png"
         />
         <meta property="og:title" content="MaheshtheDev's Portfolio" />
         <meta
@@ -121,7 +125,9 @@ export default function Home() {
         <hr className="h-[2px] border-1 border-solid bg-black" />
         <div className="flex justify-between text-xs py-1">
           <p>© 2022, MaheshtheDev.</p>
-          <p className="text-[#9E9494]">Last Updated: { siteUpdatedOn ? siteUpdatedOn.time : "Never"}</p>
+          <p className="text-[#9E9494]">
+            Last Updated: {siteUpdatedOn ? siteUpdatedOn.time : "Never"}
+          </p>
         </div>
       </footer>
     </div>
