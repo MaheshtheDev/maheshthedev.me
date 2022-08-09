@@ -23,19 +23,42 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen relative justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
       <Head>
-        <title>Sv Portfolio</title>
-        <meta name="description" content="Mahesh Reddy's Portfolio" />
         <link rel="icon" href="/favicon.ico" />
 
+        {/*<!-- HTML Meta Tags -->*/}
+        <title>Sv's Portfolio</title>
+        <meta
+          name="description"
+          content="Automating Non-Creative Jobs w/ webtools"
+        />
+
+        {/*<!-- Facebook Meta Tags -->*/}
         <meta property="og:url" content="https://www.maheshthedev.me/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Sv Portfolio" />
-        <meta property="og:image" content="https://www.maheshthedev.me/images/OG-Image.png"/>
-        <meta property="og:title" content="MaheshtheDev's Portfolio" />
+        <meta property="og:title" content="Sv's Portfolio" />
         <meta
           property="og:description"
           content="Automating Non-Creative Jobs w/ webtools"
         />
+        <meta
+          property="og:image"
+          content="https://www.maheshthedev.me/images/OG-Image.png"
+        />
+
+        {/*<!-- Twitter Meta Tags -->*/}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="maheshthedev.me" />
+        <meta property="twitter:url" content="https://www.maheshthedev.me/" />
+        <meta name="twitter:title" content="Sv's Portfolio" />
+        <meta
+          name="twitter:description"
+          content="Automating Non-Creative Jobs w/ webtools"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.maheshthedev.me/images/OG-Image.png"
+        />
+
       </Head>
       <header className="flex justify-between">
         <Image src="/logo.svg" height={75} width={100} alt="logo" />
