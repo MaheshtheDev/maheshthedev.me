@@ -46,11 +46,16 @@ export default function Home() {
             target={"_blank"}
             rel="noreferrer"
             className="font-medium mx-5 flex hover:text-primary"
+            data-umami-event="Blog Link Clicked"
           >
             Blog
             <img src="/45Arrow.svg" className="pl-1" alt="next_link"></img>
           </a>
-          <a href="#projects" className="font-medium hover:text-primary">
+          <a
+            href="#projects"
+            className="font-medium hover:text-primary"
+            data-umami-event="Projects Link Clicked"
+          >
             Projects
           </a>
         </nav>
