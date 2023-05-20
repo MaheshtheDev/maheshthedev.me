@@ -73,8 +73,8 @@ export default function Home() {
             </div>
           </section>
         </section>
-        <Image
-          src="/profile_pic.svg"
+        <img
+          src="/new-me.svg"
           height={200}
           width={125}
           alt="profile pic"
@@ -85,6 +85,7 @@ export default function Home() {
       <div className="font-medium text-lg mt-5 text-primary">Whats New?</div>
       {/*TODO : Add Recent Problem Solved in Notion */}
       {/*<div className="flex items-center pt-2">
+      <div className="flex items-center pt-2">
         <p className="text-xs p-1 rounded-[5px]">APR 2022</p>
         <div className="pl-2 font-normal cursor-pointer flex items-center">
           {problemSolved != undefined ? problemSolved.title : "Loading"}
