@@ -1,4 +1,4 @@
-export default function ProjectCard(props : {project: any}) {
+export default function ProjectCard(props: { project: any }) {
   return (
     <div
       key={props.project.title}
@@ -14,9 +14,17 @@ export default function ProjectCard(props : {project: any}) {
         <div className="border-[1.5px] flex cursor-pointer border-[#A1B6EE] hover:bg-[#A1B6EE] hover:text-black rounded-[5px] p-1 px-2 md:mb-2 mr-2 md:mr-0">
           Know More
         </div>
-        <div className="border-[1.5px] cursor-pointer border-[#A1B6EE] hover:bg-[#A1B6EE] hover:text-black rounded-[5px] p-1 px-2 ">
+        <button
+          className={
+            props.project.link == undefined
+              ? "border-[1.5px] border-[#A1B6EE] rounded-[5px] p-1 px-2 opacity-50 cursor-not-allowed"
+              : "border-[1.5px] cursor-pointer border-[#A1B6EE] hover:bg-[#A1B6EE] hover:text-black rounded-[5px] p-1 px-2"
+          }
+          onClick={() => window.open(props.project.link, "_blank")}
+          disabled={props.project.link == undefined}
+        >
           View on GitHub
-        </div>
+        </button>
       </div>
     </div>
   );
