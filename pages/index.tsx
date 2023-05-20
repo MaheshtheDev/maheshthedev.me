@@ -10,11 +10,12 @@ import { Article } from "../components/types";
 import projects from "../data/projects.json";
 import recent from "../data/recent.json";
 import AboutMe from "../components/about-me";
+import Script from "next/script";
 
 export default function Home() {
   var { data } = useSWR<any>("/api/articles", fetcher);
   var { data: problemSolved } = useSWR<any>("/api/problem-solved", fetcher);
-  var { data: siteUpdatedOn } = useSWR<any>("/api/site-updated-on", fetcher);
+  //var { data: siteUpdatedOn } = useSWR<any>("/api/site-updated-on", fetcher);
 
   if (data) data.response = data.response.slice(0, 2);
 
@@ -22,7 +23,21 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen relative justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
-      
+      <Head>
+        <title>Sv&apos;s Portfolio</title>
+        <meta name="description" content="Mahesh Reddy's Portfolio" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:image"
+          content="https://maheshthedev.me/OG-Image.png"
+        />
+        <meta property="og:title" content="MaheshtheDev's Portfolio" />
+        <meta
+          property="description"
+          key={"desc"}
+          content="Automating Non-Creative Jobs w/ webtools"
+        />
+      </Head>
       <header className="flex justify-between">
         <Image src="/logo.svg" height={75} width={100} alt="logo" />
         <nav className="flex items-center">
@@ -47,7 +62,7 @@ export default function Home() {
         <section className="flex items-center">
           <section>
             <p className="text-2xl md:text-3xl font-semibold">MaheshtheDev</p>
-            <p className="text-xl md:text-2xl font-semibold">
+            <p className="text-xl md:text-2xl font-semibold text-[#A1B6EE]">
               A Dev on Mission
             </p>
             <div className="w-fit">
@@ -68,16 +83,20 @@ export default function Home() {
       </main>
       <AboutMe />
       <div className="font-medium text-lg mt-5 text-primary">Whats New?</div>
+      {/*TODO : Add Recent Problem Solved in Notion */}
+      {/*<div className="flex items-center pt-2">
       <div className="flex items-center pt-2">
         <p className="text-xs p-1 rounded-[5px]">APR 2022</p>
         <div className="pl-2 font-normal cursor-pointer flex items-center">
           {problemSolved != undefined ? problemSolved.title : "Loading"}
           <p className="text-xs pl-1">(Last Solved Problem!)</p>
         </div>
-      </div>
+      </div>*/}
       {recent.map((activity, index: number) => (
         <div className="flex items-center" key={index}>
-          <p className="text-xs p-1 rounded-[5px]">APR 2022</p>
+          <p className="text-xs p-1 rounded-[5px] uppercase">
+            {activity.started_at}
+          </p>
           <div className="pl-2 font-normal cursor-pointer flex items-center">
             {activity.title}
             <p className="text-xs pl-1"></p>
@@ -107,12 +126,15 @@ export default function Home() {
       <footer className="py-2">
         <hr className="h-[2px] border-1 border-solid bg-black" />
         <div className="flex justify-between text-xs py-1">
-          <p>© 2022, MaheshtheDev.</p>
-          <p className="text-[#9E9494]">
-            Last Updated: {siteUpdatedOn ? siteUpdatedOn.time : "Never"}
-          </p>
+          <p>© 2023, MaheshtheDev.</p>
+          {/*<p className="text-[#9E9494]">Last Updated: { siteUpdatedOn ? siteUpdatedOn.time : "Never"}</p>*/}
         </div>
       </footer>
+      <Script
+        async
+        src="https://my-umami-lovat.vercel.app/script.js"
+        data-website-id="aeff7c82-1a11-47e9-9dbd-2097cff8a123"
+      ></Script>
     </div>
   );
 }
