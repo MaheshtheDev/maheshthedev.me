@@ -11,6 +11,7 @@ import projects from "../data/projects.json";
 import recent from "../data/recent.json";
 import AboutMe from "../components/about-me";
 import Script from "next/script";
+import { useRouter } from "next/router";
 
 export default function Home() {
   var { data } = useSWR<any>("/api/articles", fetcher);
@@ -38,28 +39,7 @@ export default function Home() {
           content="Automating Non-Creative Jobs w/ webtools"
         />
       </Head>
-      <header className="flex justify-between">
-        <Image src="/logo.svg" height={75} width={100} alt="logo" />
-        <nav className="flex items-center">
-          <a
-            href="https://blog.maheshthedev.me/"
-            target={"_blank"}
-            rel="noreferrer"
-            className="font-medium mx-5 flex hover:text-primary"
-            data-umami-event="Blog Link Clicked"
-          >
-            Blog
-            <img src="/45Arrow.svg" className="pl-1" alt="next_link"></img>
-          </a>
-          <a
-            href="#projects"
-            className="font-medium hover:text-primary"
-            data-umami-event="Projects Link Clicked"
-          >
-            Projects
-          </a>
-        </nav>
-      </header>
+      <Header />
       <p className="justify-center flex font-semibold text-red-700 animate-pulse">
         ⚠️ Development is still in Progress ⚠️
       </p>
@@ -87,27 +67,6 @@ export default function Home() {
         />
       </main>
       <AboutMe />
-      <div className="font-medium text-lg mt-5 text-primary">Whats New?</div>
-      {/*TODO : Add Recent Problem Solved in Notion */}
-      {/*<div className="flex items-center pt-2">
-      <div className="flex items-center pt-2">
-        <p className="text-xs p-1 rounded-[5px]">APR 2022</p>
-        <div className="pl-2 font-normal cursor-pointer flex items-center">
-          {problemSolved != undefined ? problemSolved.title : "Loading"}
-          <p className="text-xs pl-1">(Last Solved Problem!)</p>
-        </div>
-      </div>*/}
-      {recent.map((activity, index: number) => (
-        <div className="flex items-center" key={index}>
-          <p className="text-xs p-1 rounded-[5px] uppercase">
-            {activity.started_at}
-          </p>
-          <div className="pl-2 font-normal cursor-pointer flex items-center">
-            {activity.title}
-            <p className="text-xs pl-1"></p>
-          </div>
-        </div>
-      ))}
       <section className="mt-5">
         <p className="text-lg font-medium text-primary mb-2">
           Recent Blog Posts
@@ -141,5 +100,40 @@ export default function Home() {
         data-website-id="aeff7c82-1a11-47e9-9dbd-2097cff8a123"
       ></Script>
     </div>
+  );
+}
+
+export function Header() {
+  const router = useRouter();
+  return (
+    <header className="flex justify-between">
+      <Image onClick={() => router.basePath } src="/logo.svg" height={75} width={100} alt="logo" />
+      <nav className="flex items-center">
+        <a
+          href="https://blog.maheshthedev.me/"
+          target={"_blank"}
+          rel="noreferrer"
+          className="font-medium mx-5 flex hover:text-primary"
+          data-umami-event="Blog Link Clicked"
+        >
+          Blog
+          <img src="/45Arrow.svg" className="pl-1" alt="next_link"></img>
+        </a>
+        <a
+          href="#projects"
+          className="font-medium mr-5 hover:text-primary"
+          data-umami-event="Projects Link Clicked"
+        >
+          Projects
+        </a>
+        {/*<a
+            href="#projects"
+            className="font-medium hover:text-primary"
+            data-umami-event="Projects Link Clicked"
+          >
+            Faq
+          </a>*/}
+      </nav>
+    </header>
   );
 }
