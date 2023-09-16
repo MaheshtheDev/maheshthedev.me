@@ -7,10 +7,12 @@ export default function ProjectCard(props: { project: any }) {
       className="rounded-xl flex flex-col md:flex-row md:items-center justify-between md:px-5 px-3 py-2 bg-[#1B1818] h-42 w-full mb-3 text-white "
     >
       <div className="md:w-2/3 mb-2">
-        <p className="font-semibold text-md">{props.project.title}</p>
-        <p className="uppercase text-[10px] text-orange-400">
-          {props.project.status}
-        </p>
+        <div className="flex justify-between items-center mb-1">
+          <p className="font-semibold text-md">{props.project.title}</p>
+          <p className="uppercase text-[10px] text-orange-400">
+            {props.project.status}
+          </p>
+        </div>
         <p className="text-xs md:text-sm brightness-50 flex-wrap">
           {props.project.description}
         </p>

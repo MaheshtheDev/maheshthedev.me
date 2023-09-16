@@ -40,9 +40,6 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <p className="justify-center flex font-semibold text-red-700 animate-pulse">
-        ⚠️ Development is still in Progress ⚠️
-      </p>
       <main className="flex justify-between">
         <section className="flex items-center">
           <section>
@@ -59,14 +56,14 @@ export default function Home() {
           </section>
         </section>
         <img
-          src="/new-me.svg"
-          height={200}
-          width={125}
+          src="/new-me.jpeg"
+          height={250}
+          width={155}
           alt="profile pic"
-          className="float-right"
+          className="float-right rounded-lg"
         />
       </main>
-      <AboutMe />
+      {/*<AboutMe />*/}
       <section className="mt-5">
         <p className="text-lg font-medium text-primary mb-2">
           Recent Blog Posts
@@ -107,7 +104,13 @@ export function Header() {
   const router = useRouter();
   return (
     <header className="flex justify-between">
-      <Image onClick={() => router.basePath } src="/logo.svg" height={75} width={100} alt="logo" />
+      <Image
+        onClick={() => router.basePath}
+        src="/logo.svg"
+        height={75}
+        width={100}
+        alt="logo"
+      />
       <nav className="flex items-center">
         <a
           href="https://blog.maheshthedev.me/"
