@@ -56,9 +56,9 @@ export default function Home() {
           </section>
         </section>
         <img
-          src="/new-me.jpeg"
+          src="/new-me.png"
           height={250}
-          width={155}
+          width={125}
           alt="profile pic"
           className="float-right rounded-lg"
         />
