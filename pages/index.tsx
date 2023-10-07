@@ -8,15 +8,12 @@ import ProjectCard from "../components/projectcard";
 import fetcher from "../lib/fetcher";
 import { Article } from "../components/types";
 import projects from "../data/projects.json";
-import recent from "../data/recent.json";
-import AboutMe from "../components/about-me";
 import Script from "next/script";
 import { useRouter } from "next/router";
 
 export default function Home() {
   var { data } = useSWR<any>("/api/articles", fetcher);
   var { data: problemSolved } = useSWR<any>("/api/problem-solved", fetcher);
-  //var { data: siteUpdatedOn } = useSWR<any>("/api/site-updated-on", fetcher);
 
   if (data) data.response = data.response.slice(0, 2);
 

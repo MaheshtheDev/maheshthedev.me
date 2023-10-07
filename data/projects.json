@@ -4,15 +4,8 @@
     "title": "Gymrat AI",
     "description": "Get Personalised Meal Plan and Workout Plan based on your goals",
     "status": "Completed",
-    "link": "https://apps.apple.com/app/gymrat-ai/id6455461607",
+    "link": "https://fit.gymratfuel.com/",
     "techStack": ["React Native", "Expo", "AWS", "Typescript"]
-  },
-  {
-    "id": "2",
-    "title": "My Track",
-    "description": "Track your Income and Expenses in My Track with Integrations that you always wanted",
-    "status": "In Progress",
-    "techStack": ["React Native", "AWS Amplify", "Typescript"]
   },
   {
     "id": "3",
