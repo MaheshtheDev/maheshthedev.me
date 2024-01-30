@@ -1,5 +1,5 @@
 export const getRecentArticles = async (query: any, variables = {}) => {
-  const data = await fetch("https://api.hashnode.com/", {
+  const data = await fetch("https://gql.hashnode.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

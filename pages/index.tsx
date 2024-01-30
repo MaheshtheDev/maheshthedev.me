@@ -15,7 +15,7 @@ export default function Home() {
   var { data } = useSWR<any>("/api/articles", fetcher);
   var { data: problemSolved } = useSWR<any>("/api/problem-solved", fetcher);
 
-  if (data) data.response = data.response.slice(0, 2);
+  //if (data) data.response = data.response.slice(0, 2);
 
   if (!data) return null;
 
@@ -61,7 +61,7 @@ export default function Home() {
         />
       </main>
       {/*<AboutMe />*/}
-      <section className="mt-5">
+      {/*<section className="mt-5">
         <p className="text-lg font-medium text-primary mb-2">
           Recent Blog Posts
         </p>
@@ -70,7 +70,7 @@ export default function Home() {
             <Postcard article={article} key={index} />
           ))}
         </section>
-      </section>
+      </section>*/}
       <section className="mt-5 pb-4">
         <p className="text-lg font-medium text-primary" id="projects">
           Projects
