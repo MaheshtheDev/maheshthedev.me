@@ -12,12 +12,12 @@ import Script from "next/script";
 import { useRouter } from "next/router";
 
 export default function Home() {
-  var { data } = useSWR<any>("/api/articles", fetcher);
+  //var { data } = useSWR<any>("/api/articles", fetcher);
   var { data: problemSolved } = useSWR<any>("/api/problem-solved", fetcher);
 
   //if (data) data.response = data.response.slice(0, 2);
 
-  if (!data) return null;
+  //if (!data) return null;
 
   return (
     <div className="flex flex-col min-h-screen relative justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
