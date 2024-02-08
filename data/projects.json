@@ -8,18 +8,11 @@
     "techStack": ["React Native", "Expo", "AWS", "Typescript"]
   },
   {
-    "id": "3",
-    "title": "Azure DevOps Extension for Slapdash",
-    "description": "Get your workitems and Created PullRequests at your fingertips with Slapdash Extensions",
-    "link": "https://www.linkedin.com/posts/maheshthedev_devops-azure-creative-activity-6939141589675954177-Tw4M?utm_source=share&utm_medium=member_desktop",
-    "status": "Completed",
-    "techStack": ["NodeJS", "Azure DevOps"]
-  },
-  {
     "id": "4",
     "title": "myFRS",
     "description": "One Stop to Manage all your Fuel Station Numbers",
     "status": "Completed",
+    "link": "https://github.com/MaheshtheDev/myfrs-pwa",
     "techStack": ["NextJS", "PWA", "PlanetScale", "Typescript"]
   }
 ]

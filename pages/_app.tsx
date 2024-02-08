@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
 
         {/*<!-- HTML Meta Tags -->*/}
-        <title>Sv Portfolio</title>
+        <title>Mahesh Sanikommu | Portfolio</title>
         <meta
           name="description"
           content="Automating Non-Creative Jobs w/ webtools"
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/*<!-- Facebook Meta Tags -->*/}
         <meta property="og:url" content="https://www.maheshthedev.me/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Sv's Portfolio" />
+        <meta property="og:title" content="Mahesh Sanikommu | Full Stack Developer" />
         <meta
           property="og:description"
           content="Automating Non-Creative Jobs w/ webtools"

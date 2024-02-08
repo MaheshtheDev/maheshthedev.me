@@ -12,17 +12,10 @@ import Script from "next/script";
 import { useRouter } from "next/router";
 
 export default function Home() {
-  //var { data } = useSWR<any>("/api/articles", fetcher);
-  var { data: problemSolved } = useSWR<any>("/api/problem-solved", fetcher);
-
-  //if (data) data.response = data.response.slice(0, 2);
-
-  //if (!data) return null;
-
   return (
-    <div className="flex flex-col min-h-screen relative justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
+    <div className="flex flex-col justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
       <Head>
-        <title>Mahesh Reddy</title>
+        <title>Mahesh Sanikommu | Portfolio</title>
         <meta name="description" content="Mahesh Reddy's Portfolio" />
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -37,57 +30,53 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <main className="flex justify-between">
-        <section className="flex items-center">
-          <section>
-            <p className="text-2xl md:text-3xl font-semibold">MaheshtheDev</p>
-            <p className="text-xl md:text-2xl font-semibold text-[#A1B6EE]">
-              A Dev on Mission
-            </p>
-            <div className="w-fit">
-              <p className="text-sm md:text-md underline text-primary">
-                Automating Non-Creative Jobs
-              </p>
-              <p className="text-sm float-right">w/ webtools</p>
-            </div>
-          </section>
-        </section>
-        <img
-          src="/new-me.png"
-          height={250}
-          width={125}
-          alt="profile pic"
-          className="float-right rounded-lg"
-        />
-      </main>
-      {/*<AboutMe />*/}
-      {/*<section className="mt-5">
-        <p className="text-lg font-medium text-primary mb-2">
-          Recent Blog Posts
+      <section>
+        <h1 className="text-3xl font-bold mt-10">Hi, I'm Mahesh Sanikommu</h1>
+        <p>
+          (<span className="text-xs text-gray-400">AKA</span>{" "}
+          <span className="text-primary">MaheshtheDev</span>)
         </p>
-        <section className="flex overflow-x-auto">
-          {data.response.map((article: Article, index: number) => (
-            <Postcard article={article} key={index} />
-          ))}
-        </section>
-      </section>*/}
-      <section className="mt-5 pb-4">
-        <p className="text-lg font-medium text-primary" id="projects">
-          Projects
+        <p className="text-md mt-5">
+          I'm a Full Stack Developer. I love to build web, mobile applications
+          and{" "}
+          <span className="decoration-double underline decoration-orange-500">
+            automate non-creative jobs with web tools
+          </span>
         </p>
-        <section className="flex mt-2 flex-col">
-          {projects.map((project: any, index: number) => (
-            <ProjectCard project={project} key={index} />
-          ))}
-        </section>
       </section>
-      <footer className="py-2">
-        <hr className="h-[2px] border-1 border-solid bg-black" />
-        <div className="flex justify-between text-xs py-1">
-          <p>© 2023, MaheshtheDev.</p>
-          {/*<p className="text-[#9E9494]">Last Updated: { siteUpdatedOn ? siteUpdatedOn.time : "Never"}</p>*/}
+      <section>
+        <h2 className="text-xl font-bold mt-10">Projects</h2>
+        <div className="grid grid-cols-1 gap-5 mt-5">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
         </div>
-      </footer>
+      </section>
+      <section>
+        {/*<h2 className="text-xl font-bold mt-10">Blog</h2>*/}
+        <div className="grid grid-cols-1 gap-5 mt-5">{/*<Postcard />*/}</div>
+      </section>
+      <section className="flex">
+        <h2 className="text-md font-bold mr-5">Lets connect: </h2>
+        {/* social media icons with my profile hyper link */}
+        <div className="flex justify-center">
+          <SocialButton
+            link="https://github.com/MaheshtheDev"
+            icon="/images/github.png"
+            text="GitHub"
+          />
+          <SocialButton
+            link="https://www.linkedin.com/in/maheshthedev/"
+            icon="/images/linkedin.png"
+            text="LinkedIn"
+          />
+          <SocialButton
+            link="https://twitter.com/MaheshtheDev"
+            icon="/images/twitter.png"
+            text="Twitter"
+          />
+        </div>
+      </section>
       <Script
         async
         src="https://my-umami-lovat.vercel.app/script.js"
@@ -135,5 +124,31 @@ export function Header() {
           </a>*/}
       </nav>
     </header>
+  );
+}
+
+export function SocialButton({
+  link,
+  icon,
+  text,
+}: {
+  link: string;
+  icon: string;
+  text: string;
+}) {
+  return (
+    <a
+      href={link}
+      className="flex justify-center pr-5 mr-1 cursor-pointer text-center align-middle"
+    >
+      {/*<Image
+        src={icon}
+        height={25}
+        width={30}
+        alt={text}
+        className="cursor-pointer"
+      />*/}
+      <p className="text-white underline decoration-primary">{text}</p>
+    </a>
   );
 }
