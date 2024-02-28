@@ -1,12 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import useSWR from "swr";
-
-import Postcard from "../components/postcard";
 import ProjectCard from "../components/projectcard";
-import fetcher from "../lib/fetcher";
-import { Article } from "../components/types";
 import projects from "../data/projects.json";
 import Script from "next/script";
 import { useRouter } from "next/router";
@@ -31,14 +26,16 @@ export default function Home() {
       </Head>
       <Header />
       <section>
-        <h1 className="text-3xl font-bold mt-10">Hi, I'm Mahesh Sanikommu</h1>
+        <h1 className="text-3xl font-bold mt-10">
+          Hi, I&apos;m Mahesh Sanikommu
+        </h1>
         <p>
           (<span className="text-xs text-gray-400">AKA</span>{" "}
           <span className="text-primary">MaheshtheDev</span>)
         </p>
         <p className="text-md mt-5">
-          I'm a Full Stack Developer. I love to build web, mobile applications
-          and{" "}
+          I&apos;m a Full Stack Developer. I love to build web, mobile
+          applications and{" "}
           <span className="decoration-double underline decoration-orange-500">
             automate non-creative jobs with web tools
           </span>
@@ -52,30 +49,22 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section>
-        {/*<h2 className="text-xl font-bold mt-10">Blog</h2>*/}
-        <div className="grid grid-cols-1 gap-5 mt-5">{/*<Postcard />*/}</div>
-      </section>
-      <section className="flex">
-        <h2 className="text-md font-bold mr-5">Lets connect: </h2>
-        {/* social media icons with my profile hyper link */}
-        <div className="flex justify-center">
-          <SocialButton
-            link="https://github.com/MaheshtheDev"
-            icon="/images/github.png"
-            text="GitHub"
-          />
-          <SocialButton
-            link="https://www.linkedin.com/in/maheshthedev/"
-            icon="/images/linkedin.png"
-            text="LinkedIn"
-          />
-          <SocialButton
-            link="https://twitter.com/MaheshtheDev"
-            icon="/images/twitter.png"
-            text="Twitter"
-          />
-        </div>
+      <section className="flex justify-center">
+        <SocialButton
+          link="https://github.com/MaheshtheDev"
+          icon="/images/github.png"
+          text="GitHub"
+        />
+        <SocialButton
+          link="https://www.linkedin.com/in/maheshthedev/"
+          icon="/images/linkedin.png"
+          text="LinkedIn"
+        />
+        <SocialButton
+          link="https://twitter.com/MaheshtheDev"
+          icon="/images/twitter.png"
+          text="Twitter"
+        />
       </section>
       <Script
         async
@@ -106,7 +95,13 @@ export function Header() {
           data-umami-event="Blog Link Clicked"
         >
           Blog
-          <img src="/45Arrow.svg" className="pl-1" alt="next_link"></img>
+          <Image
+            src="/45Arrow.svg"
+            className="ml-1"
+            alt="next_link"
+            width={10}
+            height={10}
+          ></Image>
         </a>
         <a
           href="#projects"

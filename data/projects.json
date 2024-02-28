@@ -1,5 +1,13 @@
 [
   {
+    "id": "2",
+    "title": "Splitrck",
+    "description": "Splitrck is a simple and easy to track, save, spend and share expenses with friends and family",
+    "status": "Completed",
+    "link": "/",
+    "techStack": ["ReactJS", "NextJS", "AWS", "Typescript"]
+  },
+  {
     "id": "1",
     "title": "Gymrat AI",
     "description": "Get Personalised Meal Plan and Workout Plan based on your goals",

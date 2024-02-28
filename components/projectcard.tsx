@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function ProjectCard(props: { project: any }) {
   return (
     <a
@@ -7,6 +5,7 @@ export default function ProjectCard(props: { project: any }) {
       className="rounded-xl flex flex-col justify-between px-3 py-2 bg-[#1B1818] h-42 w-full text-white "
       href={props.project.link}
       target="_blank"
+      rel="noreferrer"
     >
       <div className="mb-2">
         <div className="flex justify-between items-center mb-1">
