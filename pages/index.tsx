@@ -49,7 +49,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="flex justify-center">
+      <section className="flex justify-center my-4">
         <SocialButton
           link="https://github.com/MaheshtheDev"
           icon="/images/github.png"
@@ -63,14 +63,14 @@ export default function Home() {
         <SocialButton
           link="https://twitter.com/MaheshtheDev"
           icon="/images/twitter.png"
-          text="Twitter"
+          text="X (Twitter)"
         />
       </section>
-      <Script
-        async
-        src="https://my-umami-lovat.vercel.app/script.js"
-        data-website-id="aeff7c82-1a11-47e9-9dbd-2097cff8a123"
-      ></Script>
+      <script
+        defer
+        src="https://mtd-analytics.vercel.app/script.js"
+        data-website-id="586447cb-fd00-4dfd-8a6b-0a23c1492c9f"
+      ></script>
     </div>
   );
 }
