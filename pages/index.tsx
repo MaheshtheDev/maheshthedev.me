@@ -49,7 +49,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="flex justify-center">
+      <section className="flex justify-center my-4">
         <SocialButton
           link="https://github.com/MaheshtheDev"
           icon="/images/github.png"
@@ -63,7 +63,7 @@ export default function Home() {
         <SocialButton
           link="https://twitter.com/MaheshtheDev"
           icon="/images/twitter.png"
-          text="Twitter"
+          text="X (Twitter)"
         />
       </section>
       <script
