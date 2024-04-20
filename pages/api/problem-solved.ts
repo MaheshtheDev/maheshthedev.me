@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getRecentSolvedProblem } from "../../lib/recent";
 
+export const runtime = "experimental-edge";
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

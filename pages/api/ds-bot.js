@@ -3,6 +3,7 @@ import { Telegraf, Markup } from "telegraf";
 const { BOT_TOKEN } = "1193768093:AAH9yTXq77fgpWHhv1HsusfBeunEo135fDc";
 if (!BOT_TOKEN) throw new Error('"BOT_TOKEN" env var is required!');
 const bot = new Telegraf(BOT_TOKEN);
+export const runtime = "experimental-edge";
 
 const keyboard = Markup.inlineKeyboard([
   Markup.button.url("❤️", "http://telegraf.js.org"),
