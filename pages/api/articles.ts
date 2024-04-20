@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getRecentArticles } from "../../lib/recent-articles";
 
-export const config = { runtime: "experimental-edge" };
+export const runtime = "experimental-edge";
 
 export default async function handler(
   req: NextApiRequest,
