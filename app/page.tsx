@@ -1,10 +1,11 @@
+"use client";
+
 import Head from "next/head";
 import Image from "next/image";
 
 import ProjectCard from "../components/projectcard";
 import projects from "../data/projects.json";
-import Script from "next/script";
-import { useRouter } from "next/router";
+import { redirect } from "next/navigation";
 
 export default function Home() {
   return (
@@ -24,7 +25,40 @@ export default function Home() {
           content="Automating Non-Creative Jobs w/ webtools"
         />
       </Head>
-      <Header />
+      <header className="flex justify-between my-2">
+        <Image
+          onClick={() => redirect("/")}
+          src="/logo.svg"
+          height={75}
+          width={100}
+          alt="logo"
+        />
+        {/*<nav className="flex items-center">
+          <a
+            href="https://blog.maheshthedev.me/"
+            target={"_blank"}
+            rel="noreferrer"
+            className="font-medium mx-5 flex hover:text-primary"
+            data-umami-event="Blog Link Clicked"
+          >
+            Blog
+            <Image
+              src="/45Arrow.svg"
+              className="ml-1"
+              alt="next_link"
+              width={10}
+              height={10}
+            ></Image>
+          </a>
+          <a
+            href="#projects"
+            className="font-medium mr-5 hover:text-primary"
+            data-umami-event="Projects Link Clicked"
+          >
+            Projects
+          </a>
+        </nav>*/}
+      </header>
       <section>
         <h1 className="text-3xl font-bold mt-10">
           Hi, I&apos;m Mahesh Sanikommu
@@ -49,7 +83,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="flex justify-center my-4">
+      {/*<section className="flex justify-center my-4">
         <SocialButton
           link="https://github.com/MaheshtheDev"
           icon="/images/github.png"
@@ -65,60 +99,13 @@ export default function Home() {
           icon="/images/twitter.png"
           text="X (Twitter)"
         />
-      </section>
+      </section>*/}
       <script
         defer
         src="https://mtd-analytics.vercel.app/script.js"
         data-website-id="586447cb-fd00-4dfd-8a6b-0a23c1492c9f"
       ></script>
     </div>
-  );
-}
-
-export function Header() {
-  const router = useRouter();
-  return (
-    <header className="flex justify-between">
-      <Image
-        onClick={() => router.basePath}
-        src="/logo.svg"
-        height={75}
-        width={100}
-        alt="logo"
-      />
-      <nav className="flex items-center">
-        <a
-          href="https://blog.maheshthedev.me/"
-          target={"_blank"}
-          rel="noreferrer"
-          className="font-medium mx-5 flex hover:text-primary"
-          data-umami-event="Blog Link Clicked"
-        >
-          Blog
-          <Image
-            src="/45Arrow.svg"
-            className="ml-1"
-            alt="next_link"
-            width={10}
-            height={10}
-          ></Image>
-        </a>
-        <a
-          href="#projects"
-          className="font-medium mr-5 hover:text-primary"
-          data-umami-event="Projects Link Clicked"
-        >
-          Projects
-        </a>
-        {/*<a
-            href="#projects"
-            className="font-medium hover:text-primary"
-            data-umami-event="Projects Link Clicked"
-          >
-            Faq
-          </a>*/}
-      </nav>
-    </header>
   );
 }
 
