@@ -83,54 +83,11 @@ export default function Home() {
           ))}
         </div>
       </section>
-      {/*<section className="flex justify-center my-4">
-        <SocialButton
-          link="https://github.com/MaheshtheDev"
-          icon="/images/github.png"
-          text="GitHub"
-        />
-        <SocialButton
-          link="https://www.linkedin.com/in/maheshthedev/"
-          icon="/images/linkedin.png"
-          text="LinkedIn"
-        />
-        <SocialButton
-          link="https://twitter.com/MaheshtheDev"
-          icon="/images/twitter.png"
-          text="X (Twitter)"
-        />
-      </section>*/}
       <script
         defer
         src="https://mtd-analytics.vercel.app/script.js"
         data-website-id="586447cb-fd00-4dfd-8a6b-0a23c1492c9f"
       ></script>
     </div>
-  );
-}
-
-export function SocialButton({
-  link,
-  icon,
-  text,
-}: {
-  link: string;
-  icon: string;
-  text: string;
-}) {
-  return (
-    <a
-      href={link}
-      className="flex justify-center pr-5 mr-1 cursor-pointer text-center align-middle"
-    >
-      {/*<Image
-        src={icon}
-        height={25}
-        width={30}
-        alt={text}
-        className="cursor-pointer"
-      />*/}
-      <p className="text-white underline decoration-primary">{text}</p>
-    </a>
   );
 }
