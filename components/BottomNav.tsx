@@ -3,9 +3,7 @@ import Link from "next/link";
 import { useState, useEffect, useMemo } from "react";
 
 const BottomNav = () => {
-  const [show, setShow] = useState(true);
   const [selectedNav, setSelectedNav] = useState(0);
-  let lastScrollY = 0;
 
   let navItems = useMemo(
     () => [
@@ -14,40 +12,20 @@ const BottomNav = () => {
         link: "/",
       },
       {
-        title: "baking",
+        title: "building",
         link: "/baking",
       },
-      {
-        title: "writes",
-        link: "/writes",
-      },
+      //{
+      //  title: "writes",
+      //  link: "/writes",
+      //},
     ],
     []
   );
 
-  const handleScroll = () => {
-    if (window.scrollY > lastScrollY) {
-      // Scroll Down
-      setShow(false);
-    } else {
-      // Scroll Up
-      setShow(true);
-    }
-    lastScrollY = window.scrollY;
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
-
   return (
     <div
-      className={`fixed bottom-2 left-1/2 transform -translate-x-1/2 w-11/12 md:w-9/12 bg-[#1F1717] text-white rounded-full shadow-lg transition-transform duration-300 ${
-        show ? "translate-y-0" : "translate-y-full"
-      }`}
+      className={`fixed bottom-2 left-1/2 transform -translate-x-1/2 w-11/12 md:w-9/12 bg-[#271f1f] text-white rounded-full transition-transform duration-300`}
     >
       <nav className="flex justify-around">
         {navItems.map((item, index) => (
