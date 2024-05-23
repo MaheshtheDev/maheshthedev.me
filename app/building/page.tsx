@@ -9,6 +9,20 @@ const projects = [
       "https://github.com/MaheshtheDev/Splitrck/blob/main/public/apple-touch-icon.png?raw=true",
   },
   {
+    name: "Raise Funds",
+    description: "NPO Fundraising Platform",
+    builtWith: ["React Native", "Expo", "Node.js", "MongoDB"],
+    image:
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e9/ba/27/e9ba277f-1eb8-f2e4-47b2-e427f7ba115c/AppIcon-0-0-1x_U007epad-0-85-220.png/460x0w.webp",
+  },
+  {
+    name: "Gymrat AI",
+    description: "Reimagine Workout, Meal Plan",
+    builtWith: ["React Native", "Expo", "AWS"],
+    image:
+      "https://github.com/MaheshtheDev/gymrat-ai/blob/main/src/assets/icon.png?raw=true",
+  },
+  {
     name: "myFRS",
     description: "retail store management system",
     builtWith: ["React", "Next.js", "PWA"],
@@ -17,7 +31,7 @@ const projects = [
   },
 ];
 
-export default function Baking() {
+export default function Building() {
   return (
     <div>
       <header className="p-4 flex justify-between items-center">
@@ -28,7 +42,7 @@ export default function Baking() {
             width={50}
             height={50}
             objectFit="cover"
-            alt="Your Name"
+            alt="Mahesh Sanikommu Photo"
           />
           <div className="mx-3">
             <p className="text-md font-medium">Mahesh Sanikommu</p>

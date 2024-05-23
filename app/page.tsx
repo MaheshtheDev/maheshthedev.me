@@ -3,8 +3,6 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import ProjectCard from "../components/projectcard";
-import projects from "../data/projects.json";
 import { redirect } from "next/navigation";
 
 export default function Home() {
@@ -25,13 +23,14 @@ export default function Home() {
           content="Automating Non-Creative Jobs w/ webtools"
         />
       </Head>
-      <header className="flex justify-between my-2">
+      <header className="flex justify-between my-4">
         <Image
-          onClick={() => redirect("/")}
-          src="/logo.svg"
-          height={75}
-          width={100}
-          alt="logo"
+          className="rounded-full max-w-full"
+          src="/me.png"
+          width={50}
+          height={50}
+          objectFit="cover"
+          alt="Mahesh Sanikommu Photo"
         />
         {/*<nav className="flex items-center">
           <a
@@ -60,7 +59,7 @@ export default function Home() {
         </nav>*/}
       </header>
       <section>
-        <h1 className="text-3xl font-bold mt-10">
+        <h1 className="text-3xl font-bold mt-6">
           Hi, I&apos;m Mahesh Sanikommu
         </h1>
         <p>
@@ -76,12 +75,7 @@ export default function Home() {
         </p>
       </section>
       <section>
-        <h2 className="text-xl font-bold mt-10">Projects</h2>
-        <div className="grid grid-cols-1 gap-5 mt-5">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
+        <h2 className="text-xl font-bold mt-10">timeline</h2>
       </section>
       <script
         defer

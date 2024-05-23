@@ -13,12 +13,12 @@ const BottomNav = () => {
       },
       {
         title: "building",
-        link: "/baking",
+        link: "/building",
       },
-      //{
-      //  title: "writes",
-      //  link: "/writes",
-      //},
+      {
+        title: "writes",
+        link: "/writing",
+      },
     ],
     []
   );
