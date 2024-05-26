@@ -3,8 +3,6 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import { redirect } from "next/navigation";
-
 export default function Home() {
   return (
     <div className="flex flex-col justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
@@ -27,8 +25,8 @@ export default function Home() {
         <Image
           className="rounded-full max-w-full"
           src="/me.png"
-          width={50}
-          height={50}
+          width={75}
+          height={75}
           objectFit="cover"
           alt="Mahesh Sanikommu Photo"
         />
@@ -59,7 +57,7 @@ export default function Home() {
         </nav>*/}
       </header>
       <section>
-        <h1 className="text-3xl font-bold mt-6">
+        <h1 className="text-3xl font-bold mt-2">
           Hi, I&apos;m Mahesh Sanikommu
         </h1>
         <p>
@@ -75,7 +73,64 @@ export default function Home() {
         </p>
       </section>
       <section>
-        <h2 className="text-xl font-bold mt-10">timeline</h2>
+        <h2 className="text-xl font-bold mt-10 text-blue-400">
+          few highlights
+        </h2>
+        <section className="my-2">
+          <div className="grid-cols-2 grid gap-3">
+            <div className="bg-[#271f1f] rounded-md px-2 pt-2 pb-4 relative overflow-hidden">
+              <Image
+                src="/images/github.png"
+                width={40}
+                height={40}
+                alt="Splitrck"
+                className="absolute -bottom-2 -right-0 rounded-full brightness-50"
+              />
+              <h1 className="font-medium">400+ Contributions</h1>
+              <p className="text-[12px] text-gray-400">
+                commiting myself to impact the world with my code
+              </p>
+            </div>
+            <div className="bg-[#271f1f] rounded-md px-2 pt-2 pb-4 relative overflow-hidden">
+              <Image
+                src="/images/lb.png"
+                width={60}
+                height={60}
+                alt="Splitrck"
+                className="absolute -bottom-3 -right-2 rounded-full brightness-50"
+              />
+              <h1 className="font-medium">Graduating 🎓</h1>
+              <p className="text-[12px] text-gray-400">
+                In Dec 2024, graduating in Computer Science at Cal State Long
+                Beach
+              </p>
+            </div>
+          </div>
+          <div className="bg-[#271f1f] rounded-md px-2 py-2 my-3 relative overflow-hidden">
+            <Image
+              src="/images/writing.png"
+              width={60}
+              height={60}
+              alt="Splitrck"
+              className="absolute -bottom-3 -right-2 rounded-full brightness-50"
+            />
+            <h1 className="font-medium">Helped 25k+ Devs Write better code</h1>
+            <p className="text-[12px] text-gray-400">
+              My Blogs reached more than 25000 developers and helped them write
+              better code
+            </p>
+            <div className="flex justify-start gap-10 pl-2">
+              <div className="text-center">
+                <p className="opacity-75 text-[13px]">Blogs</p>
+                <p>10</p>
+              </div>
+              <div className="text-center">
+                <p className="opacity-75 text-[13px]">Views</p>
+                <p>27456</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
       <script
         defer
