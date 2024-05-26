@@ -2,8 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["github.com", "is1-ssl.mzstatic.com"],
+    remotePatterns: [
+      { hostname: "github.com" },
+      { hostname: "is1-ssl.mzstatic.com" },
+    ],
   },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

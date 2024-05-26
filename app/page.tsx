@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat">
+    <div className="flex flex-col justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat mb-16">
       <Head>
         <title>Mahesh Sanikommu | Portfolio</title>
         <meta name="description" content="Mahesh Reddy's Portfolio" />
@@ -73,7 +73,7 @@ export default function Home() {
         </p>
       </section>
       <section>
-        <h2 className="text-xl font-bold mt-10 text-blue-400">
+        <h2 className="text-xl font-bold mt-5 text-blue-400">
           few highlights
         </h2>
         <section className="my-2">
@@ -88,7 +88,7 @@ export default function Home() {
               />
               <h1 className="font-medium">400+ Contributions</h1>
               <p className="text-[12px] text-gray-400">
-                commiting myself to impact the world with my code
+                Contributed to more than 400 commits in the past year
               </p>
             </div>
             <div className="bg-[#271f1f] rounded-md px-2 pt-2 pb-4 relative overflow-hidden">
@@ -131,6 +131,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold text-blue-400">connect with me</h2>
+        
       </section>
       <script
         defer
