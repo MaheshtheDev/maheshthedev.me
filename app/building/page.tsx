@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import Miniheader from "../../components/mini-header";
 
 const projects = [
   {
@@ -34,26 +36,8 @@ const projects = [
 export default function Building() {
   return (
     <div>
-      <header className="p-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <Image
-            className="rounded-full"
-            src="/me.png"
-            width={50}
-            height={50}
-            objectFit="cover"
-            alt="Mahesh Sanikommu Photo"
-          />
-          <div className="mx-3">
-            <p className="text-md font-medium">Mahesh Sanikommu</p>
-            <div className="opacity-60 text-sm">Full Stack Developer</div>
-          </div>
-        </div>
-        <button className="bg-yellow-400 px-2 py-1 text-black text-lg">
-          hire me
-        </button>
-      </header>
-      <h2 className="px-2 text-lg text-blue-400 font-semibold">
+      <Miniheader />
+      <h2 className="px-4 text-lg text-blue-400 font-semibold">
         building, lately!
       </h2>
       <section className="mx-2 py-2 gap-4 flex flex-col">
@@ -63,9 +47,7 @@ export default function Building() {
             key={index}
           >
             <Image
-              src={
-                project.image ||""
-              }
+              src={project.image || ""}
               width={60}
               height={60}
               alt="Splitrck"

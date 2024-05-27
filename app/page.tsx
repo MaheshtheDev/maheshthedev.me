@@ -2,6 +2,7 @@
 
 import Head from "next/head";
 import Image from "next/image";
+import Socials from "../components/socials";
 
 export default function Home() {
   return (
@@ -73,9 +74,7 @@ export default function Home() {
         </p>
       </section>
       <section>
-        <h2 className="text-xl font-bold mt-5 text-blue-400">
-          few highlights
-        </h2>
+        <h2 className="text-xl font-bold mt-5 text-blue-400">few highlights</h2>
         <section className="my-2">
           <div className="grid-cols-2 grid gap-3">
             <div className="bg-[#271f1f] rounded-md px-2 pt-2 pb-4 relative overflow-hidden">
@@ -114,28 +113,15 @@ export default function Home() {
               alt="Splitrck"
               className="absolute -bottom-3 -right-2 rounded-full brightness-50"
             />
-            <h1 className="font-medium">Helped 25k+ Devs Write better code</h1>
+            <h1 className="font-medium">Writing Impact</h1>
             <p className="text-[12px] text-gray-400">
               My Blogs reached more than 25000 developers and helped them write
               better code
             </p>
-            <div className="flex justify-start gap-10 pl-2">
-              <div className="text-center">
-                <p className="opacity-75 text-[13px]">Blogs</p>
-                <p>10</p>
-              </div>
-              <div className="text-center">
-                <p className="opacity-75 text-[13px]">Views</p>
-                <p>27456</p>
-              </div>
-            </div>
           </div>
         </section>
       </section>
-      <section>
-        <h2 className="text-xl font-bold text-blue-400">connect with me</h2>
-        
-      </section>
+      <Socials />
       <script
         defer
         src="https://mtd-analytics.vercel.app/script.js"
