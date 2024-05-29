@@ -5,7 +5,7 @@ import Image from "next/image";
 import Socials from "../components/socials";
 import { useState } from "react";
 import Project from "../components/project";
-import parse from "rss-to-json";
+import blog from "../data/blogs.json";
 
 export type SkillsType =
   | "NextJS"
@@ -18,7 +18,7 @@ export type SkillsType =
 
 export default function Home() {
   const [selectedSkills, setSelectedSkills] = useState<SkillsType[]>([]);
-  const [articles, setArticles] = useState<any[]>([]);
+  const [articles, setArticles] = useState<any[]>(blog);
 
   const skills: SkillsType[] = [
     "NextJS",
@@ -29,14 +29,6 @@ export default function Home() {
     "TailwindCSS",
     "Expo",
   ];
-
-  async function fetchArticles() {
-    var rss = await parse("https://medium.com/@maheshthedev/feed");
-    setArticles(rss.items);
-    console.log(JSON.stringify(rss, null, 3));
-  }
-
-  if (articles.length === 0) fetchArticles();
 
   return (
     <div className="flex flex-col justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat mb-16">
@@ -138,9 +130,12 @@ export default function Home() {
           {articles.length > 0 &&
             articles.map((article, index) => (
               <>
-                <li className="flex items-center gap-1 w-full" onClick={() => {
-                  window.open(article.link, "_blank");
-                }}>
+                <li
+                  className="flex items-center gap-1 w-full py-1 cursor-pointer hover:bg-[#1B1818] rounded-md px-2 my-1"
+                  onClick={() => {
+                    window.open(article.link, "_blank");
+                  }}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -155,7 +150,7 @@ export default function Home() {
                     />
                   </svg>
                   <div className="flex justify-between w-full">
-                    <p>{article.title}</p>
+                    <p className="text-ellipsis">{article.title}</p>
                     <p>→</p>
                   </div>
                 </li>
