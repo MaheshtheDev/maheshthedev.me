@@ -46,7 +46,7 @@ export default function Project({
         return selectedSkills.some(skill => project.builtWith.includes(skill));
       }).map((project, index) => (
         <div
-          className="px-3 py-2 bg-[#1B1818] font-medium rounded-md relative overflow-hidden"
+          className="px-3 py-2 bg-[#efe1e1] dark:bg-[#1B1818] font-medium rounded-md relative overflow-hidden"
           key={index}
         >
           <Image
@@ -54,7 +54,7 @@ export default function Project({
             width={60}
             height={60}
             alt="Splitrck"
-            className="absolute -top-3 -right-2 rounded-full brightness-50"
+            className="absolute -top-3 -right-2 rounded-full dark:brightness-50"
           />
           <p>{project.name}</p>
           <p className="text-[12px] opacity-75">{project.description}</p>
@@ -64,7 +64,7 @@ export default function Project({
               {project.builtWith.map((tech, index) => (
                 <span
                   key={index}
-                  className="text-[10px] px-1 bg-[#1F1717] rounded-full"
+                  className="text-[10px] px-1 rounded-full"
                 >
                   {tech}
                 </span>

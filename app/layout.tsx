@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import type { Metadata } from "next";
 import BottomNav from "../components/BottomNav";
+import { ThemeProvider } from "next-themes";
+import Providers from "./theme-provider";
 
 //TODO: Add metadata from _app.tsx
 export const metadata: Metadata = {
@@ -14,9 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ import Socials from "../components/socials";
 import { useState } from "react";
 import Project from "../components/project";
 import blog from "../data/blogs.json";
+import ThemeSwitcher from "../components/ThemeSwitcher";
 
 export type SkillsType =
   | "NextJS"
@@ -47,7 +48,7 @@ export default function Home() {
           content="Automating Non-Creative Jobs w/ webtools"
         />
       </Head>
-      <header className="flex justify-between my-4">
+      <header className="flex justify-between my-4 items-center">
         <Image
           className="rounded-full max-w-full"
           src="/me.png"
@@ -56,6 +57,7 @@ export default function Home() {
           objectFit="cover"
           alt="Mahesh Sanikommu Photo"
         />
+        <ThemeSwitcher />
       </header>
       <section>
         <h1 className="text-3xl font-bold mt-2">
@@ -85,7 +87,7 @@ export default function Home() {
           {skills.map((skill, index) => (
             <li
               key={index}
-              className={`bg-[#1B1818] px-2 py-1 rounded-md text-xs  flex gap-1 items-center cursor-pointer ${
+              className={`dark:bg-[#1B1818] bg-[#f8eeee] px-2 py-1 rounded-md text-xs  flex gap-1 items-center cursor-pointer ${
                 selectedSkills.includes(skill) ? ` bg-[#1F1717]` : ""
               }`}
               onClick={() => {
@@ -102,7 +104,7 @@ export default function Home() {
                   cx="7"
                   cy="7"
                   fill={selectedSkills.includes(skill) ? "white" : "none"}
-                  stroke="white"
+                  stroke="currentColor"
                   stroke-width="1"
                 />
               </svg>
