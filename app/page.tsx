@@ -3,8 +3,41 @@
 import Head from "next/head";
 import Image from "next/image";
 import Socials from "../components/socials";
+import { useState } from "react";
+import Project from "../components/project";
+import parse from "rss-to-json";
+
+export type SkillsType =
+  | "NextJS"
+  | "ReactJS"
+  | "React Native"
+  | "NodeJS"
+  | "PWA"
+  | "TailwindCSS"
+  | "Expo";
 
 export default function Home() {
+  const [selectedSkills, setSelectedSkills] = useState<SkillsType[]>([]);
+  const [articles, setArticles] = useState<any[]>([]);
+
+  const skills: SkillsType[] = [
+    "NextJS",
+    "ReactJS",
+    "React Native",
+    "NodeJS",
+    "PWA",
+    "TailwindCSS",
+    "Expo",
+  ];
+
+  async function fetchArticles() {
+    var rss = await parse("https://medium.com/@maheshthedev/feed");
+    setArticles(rss.items);
+    console.log(JSON.stringify(rss, null, 3));
+  }
+
+  if (articles.length === 0) fetchArticles();
+
   return (
     <div className="flex flex-col justify-center px-5 md:p-0 max-w-2xl mx-auto font-Montserrat mb-16">
       <Head>
@@ -31,31 +64,6 @@ export default function Home() {
           objectFit="cover"
           alt="Mahesh Sanikommu Photo"
         />
-        {/*<nav className="flex items-center">
-          <a
-            href="https://blog.maheshthedev.me/"
-            target={"_blank"}
-            rel="noreferrer"
-            className="font-medium mx-5 flex hover:text-primary"
-            data-umami-event="Blog Link Clicked"
-          >
-            Blog
-            <Image
-              src="/45Arrow.svg"
-              className="ml-1"
-              alt="next_link"
-              width={10}
-              height={10}
-            ></Image>
-          </a>
-          <a
-            href="#projects"
-            className="font-medium mr-5 hover:text-primary"
-            data-umami-event="Projects Link Clicked"
-          >
-            Projects
-          </a>
-        </nav>*/}
       </header>
       <section>
         <h1 className="text-3xl font-bold mt-2">
@@ -73,55 +81,88 @@ export default function Home() {
           </span>
         </p>
       </section>
-      <section>
-        <h2 className="text-xl font-bold mt-5 text-blue-400">few highlights</h2>
-        <section className="my-2">
-          <div className="grid-cols-2 grid gap-3">
-            <div className="bg-[#271f1f] rounded-md px-2 pt-2 pb-4 relative overflow-hidden">
-              <Image
-                src="/images/github.png"
-                width={40}
-                height={40}
-                alt="Splitrck"
-                className="absolute -bottom-2 -right-0 rounded-full brightness-50"
-              />
-              <h1 className="font-medium">400+ Contributions</h1>
-              <p className="text-[12px] text-gray-400">
-                Contributed to more than 400 commits in the past year
-              </p>
-            </div>
-            <div className="bg-[#271f1f] rounded-md px-2 pt-2 pb-4 relative overflow-hidden">
-              <Image
-                src="/images/lb.png"
-                width={60}
-                height={60}
-                alt="Splitrck"
-                className="absolute -bottom-3 -right-2 rounded-full brightness-50"
-              />
-              <h1 className="font-medium">Graduating 🎓</h1>
-              <p className="text-[12px] text-gray-400">
-                In Dec 2024, graduating in Computer Science at Cal State Long
-                Beach
-              </p>
-            </div>
-          </div>
-          <div className="bg-[#271f1f] rounded-md px-2 py-2 my-3 relative overflow-hidden">
-            <Image
-              src="/images/writing.png"
-              width={60}
-              height={60}
-              alt="Splitrck"
-              className="absolute -bottom-3 -right-2 rounded-full brightness-50"
-            />
-            <h1 className="font-medium">Writing Impact</h1>
-            <p className="text-[12px] text-gray-400">
-              My Blogs reached more than 25000 developers and helped them write
-              better code
-            </p>
-          </div>
-        </section>
-      </section>
       <Socials />
+      <section>
+        <div className="flex justify-between mt-2 items-center">
+          <h2 className="text-xl font-bold text-blue-400">skills</h2>
+          <span className="opacity-75 text-[10px]">
+            (select the skills you like)
+          </span>
+        </div>
+        <ol className="flex gap-2 flex-wrap my-2">
+          {skills.map((skill, index) => (
+            <li
+              key={index}
+              className={`bg-[#1B1818] px-2 py-1 rounded-md text-xs  flex gap-1 items-center cursor-pointer ${
+                selectedSkills.includes(skill) ? ` bg-[#1F1717]` : ""
+              }`}
+              onClick={() => {
+                if (selectedSkills.includes(skill)) {
+                  setSelectedSkills(selectedSkills.filter((s) => s !== skill));
+                } else {
+                  setSelectedSkills([...selectedSkills, skill]);
+                }
+              }}
+            >
+              <svg height="14" width="14" xmlns="http://www.w3.org/2000/svg">
+                <circle
+                  r="3"
+                  cx="7"
+                  cy="7"
+                  fill={selectedSkills.includes(skill) ? "white" : "none"}
+                  stroke="white"
+                  stroke-width="1"
+                />
+              </svg>
+              {skill}
+            </li>
+          ))}
+        </ol>
+      </section>
+      <section>
+        <div className="flex justify-between mt-2 items-center">
+          <h2 className="text-xl font-bold text-blue-400">projects</h2>
+          {selectedSkills.length > 0 ? (
+            <span className="opacity-75 text-[10px]">
+              (built with the selected skills)
+            </span>
+          ) : null}
+        </div>
+        <Project selectedSkills={selectedSkills} />
+      </section>
+      <section>
+        <div className="flex justify-between my-2 items-center">
+          <h2 className="text-xl font-bold text-blue-400">writes</h2>
+        </div>
+        <ol>
+          {articles.length > 0 &&
+            articles.map((article, index) => (
+              <>
+                <li className="flex items-center gap-1 w-full" onClick={() => {
+                  window.open(article.link, "_blank");
+                }}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M11.5 3h-7A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3m-7-1.5a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h7a3 3 0 0 0 3-3v-7a3 3 0 0 0-3-3zm6 6H5.43a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5.07a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1m-5.32-3h3.57a.75.75 0 0 1 0 1.5H5.18a.75.75 0 0 1 0-1.5"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <div className="flex justify-between w-full">
+                    <p>{article.title}</p>
+                    <p>→</p>
+                  </div>
+                </li>
+              </>
+            ))}
+        </ol>
+      </section>
       <script
         defer
         src="https://mtd-analytics.vercel.app/script.js"

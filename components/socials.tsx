@@ -26,17 +26,16 @@ export default function Socials() {
   ];
 
   return (
-    <section>
-      <h2 className="text-xl font-bold text-blue-400 py-1">connect with me</h2>
-      <div className="grid grid-cols-2 gap-2">
+    <section className="my-2">
+      <div className="flex gap-2">
         {socials.map((social, index) => (
           <a
             key={index}
-            className="flex gap-2 items-center hover:bg-[#271f1f] py-2 px-2 rounded-md w-full border-2 border-[#1F1717] transition-transform duration-300 transform hover:scale-105"
+            className="flex gap-2 items-center hover:bg-[#271f1f] py-2 px-2 rounded-md w-fit border-2 border-[#1F1717] transition-transform duration-300 transform hover:scale-105"
             href={social.link}
           >
             {social.icon}
-            <p>{social.name}</p>
+            {/*<p>{social.name}</p>*/}
           </a>
         ))}
       </div>
