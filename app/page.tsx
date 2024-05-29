@@ -48,13 +48,12 @@ export default function Home() {
           content="Automating Non-Creative Jobs w/ webtools"
         />
       </Head>
-      <header className="flex justify-between my-4 items-center">
+      <header className="flex justify-between my-4 items-center h-24">
         <Image
-          className="rounded-full max-w-full"
+          className="max-w-full rounded-full block"
           src="/me.png"
           width={75}
           height={75}
-          objectFit="cover"
           alt="Mahesh Sanikommu Photo"
         />
         <ThemeSwitcher />
@@ -65,7 +64,7 @@ export default function Home() {
         </h1>
         <p>
           (<span className="text-xs text-gray-400">AKA</span>{" "}
-          <span className="text-primary">MaheshtheDev</span>)
+          <span className="text-[#52a6de] font-semibold">MaheshtheDev</span>)
         </p>
         <p className="text-md mt-5">
           I&apos;m a Full Stack Developer. I love to build web, mobile
@@ -80,15 +79,15 @@ export default function Home() {
         <div className="flex justify-between mt-2 items-center">
           <h2 className="text-xl font-bold text-blue-400">skills</h2>
           <span className="opacity-75 text-[10px]">
-            (select the skills you like)
+            (select the skills)
           </span>
         </div>
         <ol className="flex gap-2 flex-wrap my-2">
           {skills.map((skill, index) => (
             <li
               key={index}
-              className={`dark:bg-[#1B1818] bg-[#f8eeee] px-2 py-1 rounded-md text-xs  flex gap-1 items-center cursor-pointer ${
-                selectedSkills.includes(skill) ? ` bg-[#1F1717]` : ""
+              className={`dark:bg-[#1B1818] bg-[#f8eeee] px-2 py-1 rounded-md text-xs flex gap-1 items-center cursor-pointer ${
+                selectedSkills.includes(skill) ? ` bg-[#1F1717] text-white` : ""
               }`}
               onClick={() => {
                 if (selectedSkills.includes(skill)) {
