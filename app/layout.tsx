@@ -1,7 +1,5 @@
 import "../styles/globals.css";
 import type { Metadata } from "next";
-import BottomNav from "../components/BottomNav";
-import { ThemeProvider } from "next-themes";
 import Providers from "./theme-provider";
 
 //TODO: Add metadata from _app.tsx
