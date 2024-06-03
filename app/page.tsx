@@ -15,7 +15,8 @@ export type SkillsType =
   | "NodeJS"
   | "PWA"
   | "TailwindCSS"
-  | "Expo";
+  | "Expo"
+  | "MongoDB"
 
 export default function Home() {
   const [selectedSkills, setSelectedSkills] = useState<SkillsType[]>([]);
@@ -29,6 +30,7 @@ export default function Home() {
     "PWA",
     "TailwindCSS",
     "Expo",
+    "MongoDB",
   ];
 
   return (
@@ -48,7 +50,7 @@ export default function Home() {
           content="Automating Non-Creative Jobs w/ webtools"
         />
       </Head>
-      <header className="flex justify-between my-4 items-center h-24">
+      <header className="flex justify-between items-center mb-4">
         <Image
           className="max-w-full rounded-full block"
           src="/me.png"
