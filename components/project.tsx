@@ -12,6 +12,13 @@ const projects = [
       "https://github.com/MaheshtheDev/Splitrck/blob/main/public/apple-touch-icon.png?raw=true",
   },
   {
+    name: "DCMH Mobile",
+    description: "App streamlines DCMH inventory and donations.",
+    builtWith: ["React Native", "Expo", "PostgreSQL", "Supabase"],
+    image:
+      "https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/002/867/831/datas/medium.jpg",
+  },
+  {
     name: "Raise Funds",
     description: "NPO Fundraising Platform",
     builtWith: ["React Native", "Expo", "NodeJS", "MongoDB", "AWS"],

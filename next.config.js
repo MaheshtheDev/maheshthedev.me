@@ -5,6 +5,7 @@ const nextConfig = {
     remotePatterns: [
       { hostname: "github.com" },
       { hostname: "is1-ssl.mzstatic.com" },
+      { hostname: "d112y698adiu2z.cloudfront.net" },
     ],
   },
 };

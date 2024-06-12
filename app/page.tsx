@@ -14,9 +14,10 @@ export type SkillsType =
   | "React Native"
   | "NodeJS"
   | "PWA"
-  | "TailwindCSS"
   | "Expo"
   | "MongoDB"
+  | "PostgreSQL"
+  | "AWS";
 
 export default function Home() {
   const [selectedSkills, setSelectedSkills] = useState<SkillsType[]>([]);
@@ -28,9 +29,10 @@ export default function Home() {
     "React Native",
     "NodeJS",
     "PWA",
-    "TailwindCSS",
     "Expo",
     "MongoDB",
+    "PostgreSQL",
+    "AWS",
   ];
 
   return (
@@ -78,7 +80,7 @@ export default function Home() {
       </section>
       <Socials />
       <section>
-        <div className="flex justify-between mt-2 items-center">
+        <div className="flex  mt-2 items-baseline gap-1">
           <h2 className="text-xl font-bold text-blue-400">skills</h2>
           <span className="opacity-75 text-[10px]">
             (select the skills)
