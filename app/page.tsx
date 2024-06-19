@@ -137,7 +137,7 @@ export default function Home() {
             articles.map((article, index) => (
               <>
                 <li
-                  className="flex items-center gap-1 w-full py-1 cursor-pointer hover:bg-[#1B1818] rounded-md px-2 my-1"
+                  className="flex items-center gap-1 w-full py-1 cursor-pointer hover:bg-[#1B1818] rounded-md px-2 my-1 hover:text-white"
                   onClick={() => {
                     window.open(article.link, "_blank");
                   }}
