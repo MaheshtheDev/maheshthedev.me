@@ -166,7 +166,7 @@ export default function Home() {
       </section>
       <script
         defer
-        src="https://mtd-analytics.vercel.app/script.js"
+        src="https://analytics.maheshthedev.me/script.js"
         data-website-id="586447cb-fd00-4dfd-8a6b-0a23c1492c9f"
       ></script>
     </div>
