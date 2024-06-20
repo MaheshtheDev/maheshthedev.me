@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { SkillsType } from "../app/page";
+import { SkillsType } from "./sections/SkillsRelatedProjects";
 
 const projects = [
   {
