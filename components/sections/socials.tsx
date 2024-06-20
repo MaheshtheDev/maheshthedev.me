@@ -38,6 +38,7 @@ export default function Socials() {
             key={index}
             className="flex gap-1 items-center bg-[#271f1f] py-1 px-1 rounded-md w-fit transition-transform duration-300 transform hover:scale-105 text-white"
             href={social.link}
+            data-umami-event={"click_social_" + social.name}
           >
             {social.icon}
           </a>

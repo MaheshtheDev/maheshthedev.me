@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import type { Metadata } from "next";
 import Providers from "./theme-provider";
 
-//TODO: Add metadata from _app.tsx
 export const metadata: Metadata = {
   title: "Mahesh Sanikommu | Portfolio",
   description: "MaheshtheDev's Portfolio",
