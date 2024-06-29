@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 import Project from "../project";
 
@@ -14,24 +14,24 @@ export type SkillsType =
   | "AWS";
 
 function SkillsRelatedProjects() {
-    const [selectedSkills, setSelectedSkills] = useState<SkillsType[]>([]);
+  const [selectedSkills, setSelectedSkills] = useState<SkillsType[]>([]);
 
-    const skills: SkillsType[] = [
-      "NextJS",
-      "ReactJS",
-      "React Native",
-      "NodeJS",
-      "PWA",
-      "Expo",
-      "MongoDB",
-      "PostgreSQL",
-      "AWS",
-    ];
+  const skills: SkillsType[] = [
+    "NextJS",
+    "ReactJS",
+    "React Native",
+    "NodeJS",
+    "PWA",
+    "Expo",
+    "MongoDB",
+    "PostgreSQL",
+    "AWS",
+  ];
 
   return (
     <>
       <section>
-        <div className="flex  mt-2 items-baseline gap-1">
+        <div className="flex  mt-2 items-baseline gap-1" id="skills">
           <h2 className="text-xl font-bold text-blue-400">skills</h2>
           <span className="opacity-75 text-[10px]">(select the skills)</span>
         </div>
@@ -47,6 +47,9 @@ function SkillsRelatedProjects() {
                   setSelectedSkills(selectedSkills.filter((s) => s !== skill));
                 } else {
                   setSelectedSkills([...selectedSkills, skill]);
+                  document.getElementById("skills")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
                 }
               }}
             >
@@ -80,4 +83,4 @@ function SkillsRelatedProjects() {
   );
 }
 
-export default SkillsRelatedProjects
+export default SkillsRelatedProjects;
