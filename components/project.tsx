@@ -12,6 +12,14 @@ const projects = [
     link: "https://splitrck.mtd.wtf/",
   },
   {
+    name: "Fast PWA",
+    description: "PWA Boilerplate with NextJS, inbuilt Hooks.",
+    builtWith: ["ReactJS", "NextJS", "TailwindCSS", "PWA"],
+    image:
+      "https://github.com/MaheshtheDev/fast-pwa/blob/main/public/icon-192x192.png?raw=true",
+    link: "https://github.com/MaheshtheDev/fast-pwa",
+  },
+  {
     name: "DCMH Mobile",
     description: "App streamlines DCMH inventory and donations.",
     builtWith: ["React Native", "Expo", "PostgreSQL", "Supabase"],
@@ -26,6 +34,14 @@ const projects = [
     image:
       "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e9/ba/27/e9ba277f-1eb8-f2e4-47b2-e427f7ba115c/AppIcon-0-0-1x_U007epad-0-85-220.png/460x0w.webp",
     link: "https://apps.apple.com/us/app/raise-funds/id6449892629",
+  },
+  {
+    name: "MaheshtheDev.me",
+    description: "Mahesh Sanikommu Portfolio",
+    builtWith: ["ReactJS", "NextJS", "TailwindCSS"],
+    image:
+      "https://raw.githubusercontent.com/MaheshtheDev/maheshthedev.me/fee98eef9389305113e056c400a5c18e3f234af0/public/logo.svg",
+    link: "https://splitrck.mtd.wtf/",
   },
   {
     name: "Gymrat AI",
