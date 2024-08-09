@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import ThemeSwitcher from '../ThemeSwitcher'
-
+import ThemeSwitcher from '../ThemeSwitcher';
 
 function Header() {
   return (
@@ -20,4 +19,4 @@ function Header() {
   );
 }
 
-export default Header
+export default Header;
