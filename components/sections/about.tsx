@@ -12,8 +12,8 @@ function About() {
         <TdesignLocation /> Long Beach, CA
       </p>
       <p className="text-md mt-3">
-        I&apos;m a Full Stack Developer. I love to build web, mobile
-        applications and{" "}
+        Full Stack Engineer at <span className="font-semibold">MultiOn</span>{". "}
+        love to build web, mobile applications and{" "}
         <span className="decoration-double underline decoration-orange-500">
           automate non-creative jobs with web tools
         </span>
