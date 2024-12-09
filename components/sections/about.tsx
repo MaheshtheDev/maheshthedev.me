@@ -12,7 +12,7 @@ function About() {
         <TdesignLocation /> Long Beach, CA
       </p>
       <p className="text-md mt-3">
-        Full Stack Engineer at <span className="font-semibold">MultiOn</span>{". "}
+        Full Stack Engineer {". "}
         love to build web, mobile applications and{" "}
         <span className="decoration-double underline decoration-orange-500">
           automate non-creative jobs with web tools
