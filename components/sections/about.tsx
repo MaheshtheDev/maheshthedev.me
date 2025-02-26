@@ -9,14 +9,17 @@ function About() {
         <span className="text-[#52a6de] font-semibold">MaheshtheDev</span>)
       </p>
       <p className="opacity-50 text-sm flex items-center gap-1">
-        <TdesignLocation /> Long Beach, CA
+        <TdesignLocation /> San Francisco, CA
       </p>
       <p className="text-md mt-3">
-        Full Stack Engineer {". "}
+        Founding Engineer @ <span className="text-[#52a6de] font-semibold">
+          AGI Inc.
+        </span>{" "}
+        {/*{". "}
         love to build web, mobile applications and{" "}
         <span className="decoration-double underline decoration-orange-500">
           automate non-creative jobs with web tools
-        </span>
+        </span>*/}
       </p>
     </section>
   );
