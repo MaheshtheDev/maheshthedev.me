@@ -4,7 +4,7 @@ export default function Socials() {
   const socials = [
     {
       name: "Resume",
-      link: "https://go.mtd.wtf/resume",
+      link: "https://go.maheshthedev.me/resume",
       icon: <Resume />,
     },
     {
