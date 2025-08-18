@@ -12,8 +12,8 @@ function About() {
         <TdesignLocation /> San Francisco, CA
       </p>
       <p className="text-md mt-3">
-        Founding Engineer @ <span className="text-[#52a6de] font-semibold">
-          AGI Inc.
+        Product @ <span className="text-[#52a6de] font-semibold">
+          Supermemory
         </span>{" "}
         {/*{". "}
         love to build web, mobile applications and{" "}
